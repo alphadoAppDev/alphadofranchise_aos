@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_2">#FDFDFD</color>
+
+    <color name="point_red">#f20606</color>
+    <color name="point_blue">#0697f2</color>
+    <color name="point_color">#7134f1</color>
+    <color name="point_sub">#eee6fe</color>
+    <color name="point_sub_2">#f8f5ff</color>
+    <color name="font_title">#141414</color>
+    <color name="font_sub">#999999</color>
+    <color name="font_sub_2">#666666</color>
+    <color name="divider_grey">#f8f8f8</color>
+    <color name="stroke_grey">#ececec</color>
+
+    <color name="transparent_black">#80141414</color>
+    <drawable name="selector_activate">@color/point_color</drawable>
+    <drawable name="selector_inactivate">@color/white</drawable>
+
+    <color name="subway_1_line">#0032a0</color>
+    <color name="subway_7_line">#67823a</color>
+    <color name="rect_grey">#f8f5fe</color>
+    <color name="button_background_grey">#f1f1f1</color>
+
+    <color name="rating_yellow">#F8E53C</color>
+
+
+</resources>

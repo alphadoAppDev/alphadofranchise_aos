@@ -1,0 +1,169 @@
+<resources>
+    <string name="app_name">alphadopetshop</string>
+
+    <!--공통-->
+    <string name="membership_rank00">베이직</string>
+    <string name="membership_rank01">프리미엄</string>
+    <string name="normal_price">정상가</string>
+    <string name="option">옵션</string>
+    <string name="facility00">전경</string>
+    <string name="facility01">내부</string>
+    <string name="facility02">진료실</string>
+    <string name="facility03">수술실</string>
+    <string name="facility04">회복실</string>
+    <string name="facility05">휴게실</string>
+    <string name="facility06">주차장</string>
+    <string name="product00">상품 1</string>
+    <string name="product01">상품 2</string>
+    <string name="next">다음</string>
+    <string name="complete">완료</string>
+    <string name="make_complete">작성완료</string>
+    <string name="hospital_type_body">신체</string>
+    <string name="hospital_type_blood">혈액</string>
+    <string name="hospital_type_ultrasound">초음파</string>
+    <string name="hospital_type_xray">방사선</string>
+    <string name="network_error">네트워크 끊김</string>
+
+    <!--메인-->
+    <string name="permisson_location_denied">위치 권한 거부 시 현재 위치와 병원 사이의 거리가 표시되지 않습니다.</string>
+    <string name="main_tab00">건강검진</string>
+    <string name="main_tab01">미용</string>
+    <string name="main_tab02">쇼핑</string>
+
+    <!--건강검진-->
+    <string name="membership_rank_price00">베이직 정상가</string>
+    <string name="membership_rank_price01">프리미엄 정상가</string>
+    <string name="health_check_review">리뷰</string>
+    <string name="health_check_price_unit">원</string>
+    <string name="health_check_filter">필터</string>
+    <string name="health_check_region">지역</string>
+    <string name="health_check_membership">멤버십</string>
+    <string name="health_check_distance">거리</string>
+    <string name="health_check_review_score">리뷰 점수</string>
+    <string name="health_check_review_count">리뷰 수</string>
+    <string name="health_check_region_00">전국</string>
+    <string name="health_check_region_01">서울</string>
+    <string name="health_check_region_02">인천</string>
+    <string name="health_check_region_03">경기</string>
+    <string name="health_check_region_04">강원</string>
+    <string name="health_check_region_05">제주</string>
+    <string name="health_check_region_06">대전</string>
+    <string name="health_check_region_07">춘천</string>
+    <string name="health_check_region_08">부산</string>
+    <string name="health_check_region_09">울산</string>
+    <string name="health_check_region_10">경남</string>
+    <string name="health_check_region_11">광주</string>
+    <string name="health_check_region_12">전라</string>
+    <string name="health_check_membership_00">멤버십 전체</string>
+    <string name="health_check_membership_01">베이직</string>
+    <string name="health_check_membership_02">프리미엄</string>
+    <string name="health_check_distance00">가까운 순</string>
+    <string name="health_check_review_score00">전체</string>
+    <string name="health_check_review_score01">진료</string>
+    <string name="health_check_review_score02">시설</string>
+    <string name="health_check_review_score03">친절</string>
+    <string name="health_check_review_count00">많은 순</string>
+    <string name="health_check_review_count01">적은 순</string>
+
+    <!--병원 상세-->
+    <string name="clinic_detail_advantage">우리 병원 장점은</string>
+    <string name="clinic_detail_tab00">상세정보</string>
+    <string name="clinic_detail_tab01">리뷰</string>
+    <string name="clinic_call">전화하기</string>
+    <string name="clinic_treatment_time">진료시간</string>
+    <string name="clinic_treatment_day_of_week00">월요일</string>
+    <string name="clinic_treatment_day_of_week01">화요일</string>
+    <string name="clinic_treatment_day_of_week02">수요일</string>
+    <string name="clinic_treatment_day_of_week03">목요일</string>
+    <string name="clinic_treatment_day_of_week04">금요일</string>
+    <string name="clinic_treatment_day_of_week05">토요일</string>
+    <string name="clinic_treatment_day_of_week06">일요일</string>간
+    <string name="clinic_treatment_day_of_week07">공휴일</string>
+    <string name="clinic_treatment_day_of_week08">휴무일</string>
+    <string name="clinic_route">오시는 길</string>
+    <string name="clinic_health_check">건강검진</string>
+    <string name="clinic_health_check_basic">알파도 베이직 멤버십</string>
+    <string name="clinic_health_check_basic_time">1~2시간 소요</string>
+    <string name="clinic_health_check_basic_price">200,000</string>
+    <string name="clinic_health_check_premium">알파도 프리미엄 멤버십</string>
+    <string name="clinic_health_check_premium_time">2~3시간 소요</string>
+    <string name="clinic_health_check_premium_price">400,000</string>
+    <string name="clinic_health_weight_standard">5kg 기준</string>
+    <string name="clinic_health_check00">신체검사</string>
+    <string name="clinic_health_check01">혈액 12종 검사</string>
+    <string name="clinic_health_check02">방사선 검사</string>
+    <string name="clinic_health_check03">초음파 검사</string>션
+    <string name="clinic_health_check_option">몸무게 1kg 추가 당 만 원 추가 비용 발생</string>
+    <string name="clinic_membership_how_to_use">멤버십 이용방법</string>
+    <string name="clinic_membership_how_to_use_content">알파도 멤버십에 가입하시면 할인된 가격으로 건강검진을 이용하실 수 있습니다.</string>
+    <string name="clinic_treatment_subject">일반 진료과목 및 비용</string>
+    <string name="clinic_treatment_facility">진료 시설</string>
+    <string name="clinic_treatment_equipment">진료 장비</string>
+
+    <!--진료과목-->
+    <string name="treatment_subject00">중성화 수술</string>
+    <string name="treatment_subject01">슬개골 수술</string>
+    <string name="treatment_subject02">전발치</string>
+    <string name="treatment_subject03">스케일링</string>
+    <string name="treatment_subject04">체리아이 수술(한쪽)</string>
+    <string name="treatment_subject05">방광결석 제거수술</string>
+    <string name="treatment_subject06">질탈 수술</string>
+    <string name="treatment_subject07">자궁 축농증 수술</string>
+
+    <!--중성화 수술-->
+    <string name="neutering">중성화 수술</string>
+    <string name="neutering_male_title00">반려견/묘 수컷 중성화수술</string>
+    <string name="neutering_male_basic">수컷 베이직 중성화 수술</string>
+    <string name="neutering_male_basic_explain00">기본신체검사, 혈액검사, 마취, 수술, 후처치, 내복약 7일, 발사</string>
+    <string name="neutering_male_basic_explain01">나이 추가 요금 없음</string>
+    <string name="neutering_male_basic_explain02">5Kg 기준, 1Kg 추가 시 1만원 추가 비용 발생</string>
+    <string name="neutering_male_premium">수컷 프리미엄 중성화 수술</string>
+    <string name="neutering_male_premium_explain00">기본신체검사, 혈액검사, 호흡마취, 수술, 지속성항생제, 내복약 7일, 발사</string>
+    <string name="neutering_male_premium_explain01">나이 추가 요금 없음</string>
+    <string name="neutering_male_premium_explain02">5Kg 기준, 1Kg 추가 시 1만원 추가 비용 발생</string>
+    <string name="neutering_male_product02">피하 잠복고환 추가금(한쪽)</string>
+    <string name="neutering_male_product03">복강내 잠복고환 추가금</string>
+
+    <string name="neutering_product_title01">반려견/묘 암컷 중성화수술</string>
+    <string name="neutering_female_basic">암컷 베이직 중성화 수술</string>
+    <string name="neutering_female_basic_explain00">기본신체검사, 혈액검사, 마취, 수술, 후처치, 내복약 7일, 발사</string>
+    <string name="neutering_female_basic_explain01">5세, 5Kg 기준, 1Kg 추가 시 1만원 추가 비용 발생</string>
+    <string name="neutering_female_premium">암컷 프리미엄 중성화 수술</string>
+    <string name="neutering_female_premium_explain00">기본신체검사, 혈액검사, 호흡마취, 수술, 지속성항생제, 내복약 7일, 발사</string>
+    <string name="neutering_female_premium_explain01">5세, 5Kg 기준, 1Kg 추가 시 1만원 추가 비용 발생</string>
+    <string name="neutering_female_product02">암컷 나이 5~10세 미만</string>
+    <string name="neutering_female_product03">암컷 나이 10~13세 미만</string>
+
+    <!--리뷰-->
+    <string name="review_examination">진료</string>
+    <string name="review_facility">시설</string>
+    <string name="review_kindness">친절</string>
+    <string name="review_total_count">전체</string>
+    <string name="review_examination_satisfaction">진료 만족도</string>
+    <string name="review_facility_satisfaction">시설 만족도</string>
+    <string name="review_kindness_satisfaction">친절도</string>
+    <string name="review_filter00">사진/영상 리뷰</string>
+    <string name="review_filter01">베스트순</string>
+    <string name="review_filter02">최신순</string>
+    <string name="review_make">리뷰 작성하기</string>
+    <string name="review_examination_satisfaction_question">진료/수술/시술 결과에 만족하셨나요?</string>
+    <string name="review_facility_satisfaction_question">직원분들이 친절하셨나요?</string>
+    <string name="review_kindness_satisfaction_question">병원의 장비와 시설에 만족하셨나요?</string>
+    <string name="satisfaction00">매우별로</string>
+    <string name="satisfaction01">별로</string>
+    <string name="satisfaction02">보통</string>
+    <string name="satisfaction03">만족</string>
+    <string name="satisfaction04">매우만족</string>
+    <string name="review">사용후기</string>
+    <string name="review_guide00">솔직한 리뷰 부탁드립니다.</string>
+    <string name="review_guide01">작성해주신 솔직한 리뷰가 다른 분들의 선택에 큰 도움이 됩니다.\n *일반적인 욕설, 비방 등은 게시되지 않을 수 있습니다.</string>
+    <string name="review_insert_picture">사진 첨부하기(최대 3장)</string>
+    <string name="review_valid_check00">진료 만족도를 선택해주세요</string>
+    <string name="review_valid_check01">시설 만족도를 선택해주세요</string>
+    <string name="review_valid_check02">친절도를 선택해주세요</string>
+    <string name="review_valid_check03">사용후기를 작성해주세요</string>
+    <string name="review_complete">리뷰작성이 완료되었습니다.</string>
+    <string name="review_upload_image_limit">최대 3까지 선택할 수 있습니다.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

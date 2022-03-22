@@ -1,0 +1,1575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <variable
+            name="activity"
+            type="kr.co.alphadopetshop.ui.health_check.HospitalDetailActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <kr.co.alphadopetshop.util.StickyScrollView
+            android:id="@+id/stickyScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            android:descendantFocusability="blocksDescendants"
+            tools:context=".ui.health_check.HospitalDetailActivity"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btnBottom"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/topLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/imgViewPager2"
+                    android:layout_width="0dp"
+                    android:layout_height="330dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btnBack"
+                    android:layout_width="25dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/icon_previous_white"
+                    android:scaleType="fitXY"
+                    android:background="@drawable/effect_ripple_oval"
+                    android:clickable="true"
+                    android:tint="@color/white"
+                    android:layout_marginStart="15dp"
+                    app:layout_constraintHeight_percent="0.5"
+                    app:layout_constraintBottom_toBottomOf="@+id/topView"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintTop_toTopOf="@+id/topView"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtImgCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:textColor="@color/font_title"
+                    app:layout_constraintVertical_bias="0.96"
+                    app:layout_constraintTop_toTopOf="@+id/imgViewPager2"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgViewPager2"
+                    app:layout_constraintStart_toStartOf="@+id/imgViewPager2"
+                    app:layout_constraintEnd_toEndOf="@+id/imgViewPager2"/>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/layoutImageType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintHorizontal_bias="0.93"
+                    app:layout_constraintTop_toTopOf="@+id/imgViewPager2"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgViewPager2"
+                    app:layout_constraintStart_toStartOf="@+id/imgViewPager2"
+                    app:layout_constraintEnd_toEndOf="@+id/imgViewPager2"/>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtMemberShip"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:textColor="@color/point_color"
+                    android:layout_marginTop="24dp"
+                    app:layout_constraintWidth_percent="0.88"
+                    app:layout_constraintTop_toBottomOf="@+id/imgViewPager2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtHospitalName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:textColor="@color/font_title"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintWidth_percent="0.88"
+                    app:layout_constraintTop_toBottomOf="@+id/txtMemberShip"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:textColor="@color/font_sub"
+                    android:layout_marginTop="5dp"
+                    android:lineSpacingExtra="6dp"
+                    app:layout_constraintWidth_percent="0.88"
+                    app:layout_constraintTop_toBottomOf="@+id/txtHospitalName"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <View
+                    android:id="@+id/divider00"
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:background="@color/divider_grey"
+                    android:layout_marginTop="24dp"
+                    app:layout_constraintTop_toBottomOf="@+id/txtAddress"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/advantageRecycler"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:overScrollMode="never"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@+id/divider00"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <View
+                    android:id="@+id/divider01"
+                    android:layout_width="0dp"
+                    android:layout_height="9dp"
+                    android:background="@color/divider_grey"
+                    android:layout_marginTop="24dp"
+                    app:layout_constraintTop_toBottomOf="@+id/advantageRecycler"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/vpContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutTab"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/detailLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutTab"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt00"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="28dp"
+                        android:text="@string/clinic_treatment_time"
+                        android:textColor="@color/font_title"
+                        android:textSize="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_percent="0.88" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtLunchTime"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="21dp"
+                        android:textColor="@color/font_title"
+                        android:textSize="14dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txt00"
+                        app:layout_constraintWidth_percent="0.81" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutDayOfWeek"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintStart_toStartOf="@+id/txtLunchTime"
+                        app:layout_constraintTop_toBottomOf="@+id/txtLunchTime"
+                        app:layout_constraintWidth_percent="0.81">
+
+                        <View
+                            android:id="@+id/line00"
+                            android:layout_width="1dp"
+                            android:layout_height="0dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtDayOfWeek00"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/clinic_treatment_day_of_week00"
+                            android:textColor="@color/font_title"
+                            android:textSize="14dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtDayOfWeekTime00"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:textColor="@color/font_sub"
+                            android:textSize="14dp"
+                            app:layout_constraintStart_toStartOf="@+id/txtDayOfWeek00"
+                            app:layout_constraintTop_toBottomOf="@+id/txtDayOfWeek00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtDayOfWeek01"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/clinic_treatment_day_of_week01"
+                            android:textColor="@color/font_title"
+                            android:textSize="14dp"
+                            app:layout_constraintStart_toEndOf="@+id/line00"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtDayOfWeekTime01"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:textColor="@color/font_sub"
+                            android:textSize="14dp"
+                            app:layout_constraintStart_toStartOf="@+id/txtDayOfWeek01"
+                            app:layout_constraintTop_toBottomOf="@+id/txtDayOfWeek01" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtDayOfWeek02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/clinic_treatment_day_of_week02"
+                            android:textColor="@color/font_title"
+                            android:textSize="14dp"
+                            app:layout_constraintStart_toStartOf="@+id/txtDayOfWeekTime00"
+                            app:layout_constraintTop_toBottomOf="@+id/txtDayOfWeekTime00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtDayOfWeekTime02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:textColor="@color/font_sub"
+                            android:textSize="14dp"
+                            app:layout_constraintStart_toStartOf="@+id/txtDayOfWeek02"
+                            app:layout_constraintTop_toBottomOf="@+id/txtDayOfWeek02" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtDayOfWeek03"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/clinic_treatment_day_of_week03"
+                            android:textColor="@color/font_title"
+                            android:textSize="14dp"
+                            app:layout_constraintStart_toEndOf="@+id/line00"
+                            app:layout_constraintTop_toBottomOf="@+id/txtDayOfWeekTime01" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtDayOfWeekTime03"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:textColor="@color/font_sub"
+                            android:textSize="14dp"
+                            app:layout_constraintStart_toStartOf="@+id/txtDayOfWeek03"
+                            app:layout_constraintTop_toBottomOf="@+id/txtDayOfWeek03" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtDayOfWeek04"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/clinic_treatment_day_of_week04"
+                            android:textColor="@color/font_title"
+                            android:textSize="14dp"
+                            app:layout_constraintStart_toStartOf="@+id/txtDayOfWeekTime02"
+                            app:layout_constraintTop_toBottomOf="@+id/txtDayOfWeekTime02" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtDayOfWeekTime04"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:textColor="@color/font_sub"
+                            android:textSize="14dp"
+                            app:layout_constraintStart_toStartOf="@+id/txtDayOfWeek04"
+                            app:layout_constraintTop_toBottomOf="@+id/txtDayOfWeek04" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtDayOfWeek05"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/clinic_treatment_day_of_week05"
+                            android:textColor="@color/font_title"
+                            android:textSize="14dp"
+                            app:layout_constraintStart_toEndOf="@+id/line00"
+                            app:layout_constraintTop_toBottomOf="@+id/txtDayOfWeekTime03" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtDayOfWeekTime05"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:textColor="@color/font_sub"
+                            android:textSize="14dp"
+                            app:layout_constraintStart_toStartOf="@+id/txtDayOfWeek05"
+                            app:layout_constraintTop_toBottomOf="@+id/txtDayOfWeek05" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtDayOfWeek06"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/clinic_treatment_day_of_week06"
+                            android:textColor="@color/font_title"
+                            android:textSize="14dp"
+                            app:layout_constraintStart_toStartOf="@+id/txtDayOfWeekTime04"
+                            app:layout_constraintTop_toBottomOf="@+id/txtDayOfWeekTime04" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtDayOfWeekTime06"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:textColor="@color/font_sub"
+                            android:textSize="14dp"
+                            app:layout_constraintStart_toStartOf="@+id/txtDayOfWeek06"
+                            app:layout_constraintTop_toBottomOf="@+id/txtDayOfWeek06" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtDayOfWeek07"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/clinic_treatment_day_of_week07"
+                            android:textColor="@color/font_title"
+                            android:textSize="14dp"
+                            app:layout_constraintStart_toEndOf="@+id/line00"
+                            app:layout_constraintTop_toBottomOf="@+id/txtDayOfWeekTime05" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtDayOfWeekTime07"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:textColor="@color/font_sub"
+                            android:textSize="14dp"
+                            app:layout_constraintStart_toStartOf="@+id/txtDayOfWeek07"
+                            app:layout_constraintTop_toBottomOf="@+id/txtDayOfWeek07" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/line01"
+                        android:layout_width="0dp"
+                        android:layout_height="9dp"
+                        android:layout_marginTop="24dp"
+                        android:background="@color/divider_grey"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutDayOfWeek" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/appCompatTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/clinic_route"
+                        android:textColor="@color/font_title"
+                        android:textSize="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/line01"
+                        app:layout_constraintWidth_percent="0.88" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtAddessHospital"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:textColor="@color/font_title"
+                        android:textSize="14dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView"
+                        app:layout_constraintWidth_percent="0.88" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/mapView"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintDimensionRatio="1:0.36"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtAddessHospital"
+                        app:layout_constraintWidth_percent="0.88" />
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/layoutSubway"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="top"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintStart_toStartOf="@+id/mapView"
+                        app:layout_constraintTop_toBottomOf="@+id/mapView"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12dp"
+                        app:layout_constraintStart_toEndOf="@+id/layoutSubway"
+                        app:layout_constraintTop_toTopOf="@+id/layoutSubway"
+                        app:layout_constraintBottom_toBottomOf="@+id/layoutSubway"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtLocation"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:gravity="top"
+                        android:textColor="@color/font_title"
+                        android:textSize="12dp"
+                        android:layout_marginEnd="10dp"
+                        app:layout_constraintEnd_toStartOf="@+id/appCompatImageView"
+                        app:layout_constraintStart_toEndOf="@+id/layoutSubway"
+                        app:layout_constraintTop_toTopOf="@+id/txt10"/>
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/appCompatImageView"
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:src="@drawable/hospital_parking_gray"
+                        app:layout_constraintBottom_toBottomOf="@+id/txtPark"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/txtPark"
+                        app:layout_constraintTop_toTopOf="@+id/txtPark" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtPark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/font_title"
+                        android:textSize="12dp"
+                        android:gravity="center"
+                        app:layout_constraintEnd_toEndOf="@+id/mapView"
+                        app:layout_constraintTop_toTopOf="@+id/txtLocation" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgBus"
+                        android:layout_width="20dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/hospital_bus_gray"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintStart_toStartOf="@+id/layoutSubway"
+                        app:layout_constraintTop_toBottomOf="@+id/txtLocation"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12dp"
+                        app:layout_constraintStart_toEndOf="@+id/imgBus"
+                        app:layout_constraintTop_toTopOf="@+id/imgBus"
+                        app:layout_constraintBottom_toBottomOf="@+id/imgBus"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtBus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:lineSpacingExtra="6dp"
+                        android:textColor="@color/font_title"
+                        android:textSize="12dp"
+                        android:gravity="top"
+                        app:layout_constraintStart_toEndOf="@+id/imgBus"
+                        app:layout_constraintTop_toTopOf="@+id/txt11" />
+
+                    <View
+                        android:id="@+id/divider02"
+                        android:layout_width="0dp"
+                        android:layout_height="9dp"
+                        android:layout_marginTop="24dp"
+                        android:background="@color/divider_grey"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtBus" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtRegionMonthProfitTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/clinic_health_check"
+                        android:textColor="@color/font_title"
+                        android:textSize="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.51"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/divider02"
+                        app:layout_constraintWidth_percent="0.88" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutBasic"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.51"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtRegionMonthProfitTitle"
+                        app:layout_constraintWidth_percent="0.88">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt03"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/clinic_health_check_basic"
+                            android:textColor="@color/font_title"
+                            android:textSize="16dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.51"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtUnit00"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/health_check_price_unit"
+                            android:textColor="@color/font_sub"
+                            android:textSize="16dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/txt03"
+                            app:layout_constraintEnd_toEndOf="@+id/txt03"
+                            app:layout_constraintTop_toTopOf="@+id/txt03" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtBasicPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/font_title"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtUnit00"
+                            app:layout_constraintEnd_toStartOf="@+id/txtUnit00"
+                            app:layout_constraintTop_toTopOf="@+id/txtUnit00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="11dp"
+                            android:text="@string/normal_price"
+                            android:textColor="@color/font_sub"
+                            android:textSize="12dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtBasicPrice"
+                            app:layout_constraintEnd_toStartOf="@+id/txtBasicPrice"
+                            app:layout_constraintTop_toTopOf="@+id/txtBasicPrice" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtBasicCareTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textColor="@color/font_sub"
+                            android:textSize="14dp"
+                            app:layout_constraintStart_toStartOf="@+id/txt03"
+                            app:layout_constraintTop_toBottomOf="@+id/txt03" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtBasicStandard00"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/font_sub"
+                            android:textSize="14dp"
+                            app:layout_constraintTop_toTopOf="@+id/txtBasicStandard01"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtBasicStandard01"
+                            app:layout_constraintEnd_toStartOf="@+id/txtBasicStandard01" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtBasicStandard01"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/font_sub"
+                            android:textSize="14dp"
+                            android:text="kg 기준"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtBasicCareTime"
+                            app:layout_constraintEnd_toEndOf="@+id/txtUnit00" />
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layoutHealthCheck"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/bg_10dp_rounding_point_sub_2"
+                            android:onClick="@{() -> activity.moveInspectionDetail(0)}"
+                            android:paddingTop="9dp"
+                            android:paddingBottom="9dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txtBasicCareTime">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:onClick="@{() -> activity.moveInspectionDetail(0)}"
+                                android:text="@string/clinic_health_check00"
+                                android:textColor="@color/font_title"
+                                android:textSize="16dp"
+                                android:layout_marginStart="14dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatImageButton
+                                android:layout_width="24dp"
+                                android:layout_height="0dp"
+                                android:background="@android:color/transparent"
+                                android:onClick="@{() -> activity.moveInspectionDetail(0)}"
+                                android:src="@drawable/icon_next_purple"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintDimensionRatio="1:1"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.95"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layoutBloodTest"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/bg_10dp_rounding_point_sub_2"
+                            android:onClick="@{() -> activity.moveInspectionDetail(1)}"
+                            android:paddingTop="9dp"
+                            android:paddingBottom="9dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/layoutHealthCheck">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:onClick="@{() -> activity.moveInspectionDetail(1)}"
+                                android:text="@string/clinic_health_check01"
+                                android:textColor="@color/font_title"
+                                android:textSize="16dp"
+                                android:layout_marginStart="14dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatImageButton
+                                android:layout_width="24dp"
+                                android:layout_height="0dp"
+                                android:background="@android:color/transparent"
+                                android:onClick="@{() -> activity.moveInspectionDetail(1)}"
+                                android:src="@drawable/icon_next_purple"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintDimensionRatio="1:1"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.95"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutPremium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.51"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutBasic"
+                        app:layout_constraintWidth_percent="0.88">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtHeadOfficeMonthSales"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:text="@string/clinic_health_check_premium"
+                            android:textColor="@color/font_title"
+                            android:textSize="16dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.51"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtUnit01"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/health_check_price_unit"
+                            android:textColor="@color/font_sub"
+                            android:textSize="16dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtHeadOfficeMonthSales"
+                            app:layout_constraintEnd_toEndOf="@+id/txtHeadOfficeMonthSales"
+                            app:layout_constraintTop_toTopOf="@+id/txtHeadOfficeMonthSales" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtPremiumPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/font_title"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtUnit01"
+                            app:layout_constraintEnd_toStartOf="@+id/txtUnit01"
+                            app:layout_constraintTop_toTopOf="@+id/txtUnit01" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="11dp"
+                            android:text="@string/normal_price"
+                            android:textColor="@color/font_sub"
+                            android:textSize="12dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtPremiumPrice"
+                            app:layout_constraintEnd_toStartOf="@+id/txtPremiumPrice"
+                            app:layout_constraintTop_toTopOf="@+id/txtPremiumPrice" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtPremiumCareTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textColor="@color/font_sub"
+                            android:textSize="14dp"
+                            app:layout_constraintStart_toStartOf="@+id/txtHeadOfficeMonthSales"
+                            app:layout_constraintTop_toBottomOf="@+id/txtHeadOfficeMonthSales" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtPremiumStandard00"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/font_sub"
+                            android:textSize="14dp"
+                            app:layout_constraintTop_toTopOf="@+id/txtPremiumStandard01"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtPremiumStandard01"
+                            app:layout_constraintEnd_toStartOf="@+id/txtPremiumStandard01" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtPremiumStandard01"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/font_sub"
+                            android:textSize="14dp"
+                            android:text="kg 기준"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtPremiumCareTime"
+                            app:layout_constraintEnd_toEndOf="@+id/txtUnit01" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layoutHealthCheck01"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/bg_10dp_rounding_point_sub_2"
+                            android:onClick="@{() -> activity.moveInspectionDetail(0)}"
+                            android:paddingTop="9dp"
+                            android:paddingBottom="9dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txtPremiumCareTime">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:onClick="@{() -> activity.moveInspectionDetail(0)}"
+                                android:text="@string/clinic_health_check00"
+                                android:textColor="@color/font_title"
+                                android:textSize="16dp"
+                                android:layout_marginStart="14dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatImageButton
+                                android:layout_width="24dp"
+                                android:layout_height="0dp"
+                                android:background="@android:color/transparent"
+                                android:onClick="@{() -> activity.moveInspectionDetail(0)}"
+                                android:src="@drawable/icon_next_purple"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintDimensionRatio="1:1"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.95"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layoutBloodTest01"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/bg_10dp_rounding_point_sub_2"
+                            android:onClick="@{() -> activity.moveInspectionDetail(1)}"
+                            android:paddingTop="9dp"
+                            android:paddingBottom="9dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/layoutHealthCheck01">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:onClick="@{() -> activity.moveInspectionDetail(1)}"
+                                android:text="@string/clinic_health_check01"
+                                android:textColor="@color/font_title"
+                                android:textSize="16dp"
+                                android:layout_marginStart="14dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatImageButton
+                                android:layout_width="24dp"
+                                android:layout_height="0dp"
+                                android:background="@android:color/transparent"
+                                android:onClick="@{() -> activity.moveInspectionDetail(1)}"
+                                android:src="@drawable/icon_next_purple"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintDimensionRatio="1:1"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.95"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layoutRadiation"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/bg_10dp_rounding_point_sub_2"
+                            android:onClick="@{() -> activity.moveInspectionDetail(2)}"
+                            android:paddingTop="9dp"
+                            android:paddingBottom="9dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/layoutBloodTest01">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:onClick="@{() -> activity.moveInspectionDetail(2)}"
+                                android:text="@string/clinic_health_check02"
+                                android:textColor="@color/font_title"
+                                android:textSize="16dp"
+                                android:layout_marginStart="14dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatImageButton
+                                android:layout_width="24dp"
+                                android:layout_height="0dp"
+                                android:background="@android:color/transparent"
+                                android:onClick="@{() -> activity.moveInspectionDetail(2)}"
+                                android:src="@drawable/icon_next_purple"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintDimensionRatio="1:1"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.95"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layoutUltrasonicWave"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/bg_10dp_rounding_point_sub_2"
+                            android:onClick="@{()-> activity.moveInspectionDetail(3)}"
+                            android:paddingTop="9dp"
+                            android:paddingBottom="9dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/layoutRadiation">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:onClick="@{()-> activity.moveInspectionDetail(3)}"
+                                android:text="@string/clinic_health_check03"
+                                android:textColor="@color/font_title"
+                                android:textSize="16dp"
+                                android:layout_marginStart="14dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatImageButton
+                                android:layout_width="24dp"
+                                android:layout_height="0dp"
+                                android:background="@android:color/transparent"
+                                android:onClick="@{()-> activity.moveInspectionDetail(3)}"
+                                android:src="@drawable/icon_next_purple"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintDimensionRatio="1:1"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.95"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtOptionTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/option"
+                        android:textColor="@color/font_title"
+                        android:textSize="16dp"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutPremium"
+                        app:layout_constraintWidth_percent="0.88" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutOption00"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/bg_10dp_rounding_point_sub_2"
+                        android:paddingTop="9dp"
+                        android:paddingBottom="9dp"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtOptionTitle"
+                        app:layout_constraintWidth_percent="0.88">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtOption00"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/font_title"
+                            android:textSize="16dp"
+                            android:paddingStart="14dp"
+                            android:paddingEnd="14dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutOption01"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/bg_10dp_rounding_point_sub_2"
+                        android:paddingTop="9dp"
+                        android:paddingBottom="9dp"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutOption00"
+                        app:layout_constraintWidth_percent="0.88">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtOption01"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/font_title"
+                            android:textSize="16dp"
+                            android:paddingStart="14dp"
+                            android:paddingEnd="14dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutOption02"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/bg_10dp_rounding_point_sub_2"
+                        android:paddingTop="9dp"
+                        android:paddingBottom="9dp"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutOption01"
+                        app:layout_constraintWidth_percent="0.88">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtOption02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/font_title"
+                            android:textSize="16dp"
+                            android:paddingStart="14dp"
+                            android:paddingEnd="14dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutOption03"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/bg_10dp_rounding_point_sub_2"
+                        android:paddingTop="9dp"
+                        android:paddingBottom="9dp"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutOption02"
+                        app:layout_constraintWidth_percent="0.88">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtOption03"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/font_title"
+                            android:textSize="16dp"
+                            android:paddingStart="14dp"
+                            android:paddingEnd="14dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtMemberShipTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/clinic_membership_how_to_use"
+                        android:textColor="@color/font_title"
+                        android:textSize="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutOption03"
+                        app:layout_constraintWidth_percent="0.88" />
+
+                    <kr.co.alphadopetshop.util.CharacterWrapTextView
+                        android:id="@+id/txtMemberShipContent"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:lineSpacingExtra="6dp"
+                        android:text="@string/clinic_membership_how_to_use_content"
+                        android:textColor="@color/font_sub_2"
+                        android:textSize="14dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtMemberShipTitle"
+                        app:layout_constraintWidth_percent="0.88" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgMembership"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/img_membership_service"
+                        app:layout_constraintDimensionRatio="1:0.37"
+                        app:layout_constraintTop_toBottomOf="@+id/txtMemberShipContent"
+                        app:layout_constraintWidth_percent="0.88"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <View
+                        android:id="@+id/divider03"
+                        android:layout_width="0dp"
+                        android:layout_height="9dp"
+                        android:layout_marginTop="24dp"
+                        android:background="@color/divider_grey"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imgMembership" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtHeadOfficeMonthProfit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/clinic_treatment_subject"
+                        android:textColor="@color/font_title"
+                        android:textSize="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/divider03"
+                        app:layout_constraintWidth_percent="0.88" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerSubject"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:orientation="vertical"
+                        android:overScrollMode="never"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="@+id/txtHeadOfficeMonthProfit"
+                        app:layout_constraintStart_toStartOf="@+id/txtHeadOfficeMonthProfit"
+                        app:layout_constraintTop_toBottomOf="@+id/txtHeadOfficeMonthProfit" />
+
+                    <View
+                        android:id="@+id/divider04"
+                        android:layout_width="0dp"
+                        android:layout_height="9dp"
+                        android:layout_marginTop="24dp"
+                        android:background="@color/divider_grey"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/recyclerSubject" />
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/medicalEquipRecycler"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="50dp"
+                        android:layout_marginTop="24dp"
+                        android:overScrollMode="never"
+                        app:layout_constraintWidth_percent="0.88"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@+id/divider04"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/reviewLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:visibility="gone"
+                    android:nestedScrollingEnabled="true"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutTab"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintWidth_percent="0.88"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/review_total_count"
+                        android:textColor="@color/font_title"
+                        android:textSize="16dp"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/view"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtTotalCnt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/font_title"
+                        android:textSize="16dp"
+                        android:layout_marginStart="5dp"
+                        app:layout_constraintTop_toTopOf="@+id/txtTotal"
+                        app:layout_constraintBottom_toBottomOf="@+id/txtTotal"
+                        app:layout_constraintStart_toEndOf="@+id/txtTotal"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/scoreLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="23dp"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtTotal">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toTopOf="@+id/txtExamination"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtKindness"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/txtExamination">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txtTotalScore"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="18dp"
+                                android:textColor="@color/font_title"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:layout_marginBottom="3dp"
+                                app:layout_constraintVertical_chainStyle="packed"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toTopOf="@+id/ratingBar"/>
+
+
+                            <RatingBar
+                                style="?android:attr/ratingBarStyleIndicator"
+                                android:id="@+id/ratingBar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:numStars="5"
+                                android:scaleX=".5"
+                                android:scaleY=".5"
+                                android:max="5"
+                                android:isIndicator="true"
+                                android:theme="@style/RatingBar"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/txtTotalScore"/>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtExamination"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/review_examination_satisfaction"
+                            android:textColor="@color/font_title"
+                            android:textSize="12dp"
+                            android:layout_marginEnd="10dp"
+                            app:layout_constraintBottom_toTopOf="@+id/txtFacility"
+                            app:layout_constraintEnd_toStartOf="@+id/progressBarExamination"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <ProgressBar
+                            android:id="@+id/progressBarExamination"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="0dp"
+                            android:layout_height="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:max="50"
+                            android:progressDrawable="@drawable/custom_progress_bar"
+                            app:layout_constraintEnd_toStartOf="@+id/txtExaminationScore"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtExamination"
+                            app:layout_constraintTop_toTopOf="@+id/txtExamination"
+                            app:layout_constraintWidth_percent="0.25" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtExaminationScore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/font_title"
+                            android:textSize="12dp"
+                            android:layout_marginEnd="34dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/txtExamination"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtExamination"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtFacility"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/review_facility_satisfaction"
+                            android:textColor="@color/font_title"
+                            android:textSize="12dp"
+                            android:layout_marginEnd="10dp"
+                            app:layout_constraintBottom_toTopOf="@+id/txtKindness"
+                            app:layout_constraintEnd_toStartOf="@+id/progressBarFacility"
+                            app:layout_constraintTop_toBottomOf="@+id/txtExamination" />
+
+                        <ProgressBar
+                            android:id="@+id/progressBarFacility"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="0dp"
+                            android:layout_height="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:max="50"
+                            android:progressDrawable="@drawable/custom_progress_bar"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtFacility"
+                            app:layout_constraintEnd_toStartOf="@+id/txtFacilityScore"
+                            app:layout_constraintTop_toTopOf="@+id/txtFacility"
+                            app:layout_constraintWidth_percent="0.25" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtFacilityScore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/font_title"
+                            android:textSize="12dp"
+                            android:layout_marginEnd="34dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/txtFacility"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtFacility"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtKindness"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/review_kindness_satisfaction"
+                            android:textColor="@color/font_title"
+                            android:textSize="12dp"
+                            android:layout_marginEnd="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/progressKindness"
+                            app:layout_constraintTop_toBottomOf="@+id/txtFacility" />
+
+                        <ProgressBar
+                            android:id="@+id/progressKindness"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="0dp"
+                            android:layout_height="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:max="50"
+                            android:progressDrawable="@drawable/custom_progress_bar"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtKindness"
+                            app:layout_constraintEnd_toStartOf="@+id/txtKindnessScore"
+                            app:layout_constraintTop_toTopOf="@+id/txtKindness"
+                            app:layout_constraintWidth_percent="0.25" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtKindnessScore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/font_title"
+                            android:textSize="12dp"
+                            android:layout_marginEnd="34dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/txtKindness"
+                            app:layout_constraintBottom_toBottomOf="@+id/txtKindness"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/divider"
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:background="@color/divider_grey"
+                        android:layout_marginTop="27dp"
+                        app:layout_constraintTop_toBottomOf="@+id/scoreLayout"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/checkBoxReview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/review_filter00"
+                        android:visibility="invisible"
+                        app:layout_constraintTop_toBottomOf="@+id/divider"
+                        app:layout_constraintStart_toStartOf="@+id/view"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtFilter00"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/review_filter01"
+                        android:textColor="@color/font_title"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        android:layout_marginEnd="20dp"
+                        app:layout_constraintEnd_toStartOf="@+id/txtFilter01"
+                        app:layout_constraintTop_toTopOf="@+id/checkBoxReview"
+                        app:layout_constraintBottom_toBottomOf="@+id/checkBoxReview"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtFilter01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/review_filter02"
+                        android:textColor="@color/font_sub"
+                        android:textSize="14dp"
+                        app:layout_constraintEnd_toEndOf="@+id/view"
+                        app:layout_constraintTop_toTopOf="@+id/checkBoxReview"
+                        app:layout_constraintBottom_toBottomOf="@+id/checkBoxReview"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/reviewRecyclerReview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="50dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:orientation="vertical"
+                        android:overScrollMode="never"
+                        app:layout_constraintWidth_percent="0.88"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtFilter00"
+                        app:layout_constraintVertical_bias="1.0" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/topView"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:background="@color/white"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/btnTopBack"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:src="@drawable/icon_previous_white"
+                        android:scaleType="fitXY"
+                        android:background="@drawable/effect_ripple_oval"
+                        android:clickable="true"
+                        android:tint="@color/black"
+                        android:layout_marginStart="15dp"
+                        app:layout_constraintHeight_percent="0.5"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtTitleHospital"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/font_title"
+                        android:textSize="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutTab"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divider01">
+
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tabLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        android:background="@color/white"
+                        app:tabIndicator="@drawable/tab_indicator"
+                        app:tabMinWidth="80dp"
+                        app:tabMode="fixed"
+                        app:tabRippleColor="@null"
+                        app:tabIndicatorColor="@color/point_color"
+                        app:tabSelectedTextColor="@color/black"
+                        app:tabTextAppearance="@style/TabLayoutTextStyle"
+                        app:tabTextColor="@color/font_sub"
+                        app:tabPaddingTop="15dp"
+                        app:tabPaddingBottom="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.07"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <com.google.android.material.tabs.TabItem
+                            android:id="@+id/tabItem00"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/clinic_detail_tab00" />
+
+                        <com.google.android.material.tabs.TabItem
+                            android:id="@+id/tabItem01"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/clinic_detail_tab01" />
+
+                    </com.google.android.material.tabs.TabLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </kr.co.alphadopetshop.util.StickyScrollView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnBottom"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:background="@color/point_color"
+            android:text="@string/clinic_call"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/visibleLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

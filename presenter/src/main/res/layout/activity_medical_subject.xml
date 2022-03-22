@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="kr.co.alphadopetshop.ui.health_check.detail.MedicalSubjectActivity" />
+    </data>
+
+    <me.didik.component.StickyNestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        tools:context=".ui.health_check.detail.MedicalSubjectActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/topView"
+                android:layout_width="0dp"
+                android:layout_height="58dp"
+                android:background="@color/white"
+                android:paddingTop="10dp"
+                android:tag="sticky"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btnBack"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/effect_ripple_oval"
+                    android:clickable="true"
+                    android:onClick="@{() -> activity.finish()}"
+                    android:src="@drawable/icon_close_black"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtTitle"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.034"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txtTitle" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/font_title"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/btnBack"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                android:id="@+id/constraintLayout2"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="50dp"-->
+            <!--                android:layout_marginTop="15dp"-->
+            <!--                android:background="@color/point_color"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/constraintLayout">-->
+
+            <!--                <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                    android:id="@+id/appCompatTextView2"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginStart="24dp"-->
+            <!--                    android:text="@string/product00"-->
+            <!--                    android:textColor="@color/white"-->
+            <!--                    android:textSize="17dp"-->
+            <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--                <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginStart="10dp"-->
+            <!--                    android:text="@string/neutering_male_title00"-->
+            <!--                    android:textColor="@color/white"-->
+            <!--                    android:textSize="16dp"-->
+            <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                    app:layout_constraintStart_toEndOf="@+id/appCompatTextView2"-->
+            <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+            <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:background="@color/divider_grey"-->
+            <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">-->
+
+            <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                    android:id="@+id/constraintLayout3"-->
+            <!--                    android:layout_width="0dp"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginTop="20dp"-->
+            <!--                    android:background="@drawable/bg_20dp_rounding_white"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintTop_toTopOf="parent"-->
+            <!--                    app:layout_constraintWidth_percent="0.88">-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView3"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="20dp"-->
+            <!--                        android:text="@string/neutering_male_basic"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="16dp"-->
+            <!--                        android:layout_marginStart="20dp"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:text="90,000"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="16dp"-->
+            <!--                        android:textStyle="bold"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView3"-->
+            <!--                        app:layout_constraintEnd_toStartOf="@+id/appCompatTextView4"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.96"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/appCompatTextView3" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView4"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:text="@string/health_check_price_unit"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="14dp"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView3"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.96"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/appCompatTextView3" />-->
+
+            <!--                    <View-->
+            <!--                        android:id="@+id/divider00"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="1dp"-->
+            <!--                        android:layout_marginTop="15dp"-->
+            <!--                        android:background="@color/divider_grey"-->
+            <!--                        app:layout_constraintEnd_toEndOf="@+id/appCompatTextView4"-->
+            <!--                        app:layout_constraintStart_toStartOf="@+id/appCompatTextView3"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView3" />-->
+
+            <!--                    <kr.co.alphadopetshop.util.CharacterWrapTextView-->
+            <!--                        android:id="@+id/txtDot00"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="15dp"-->
+            <!--                        android:text="·"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="18dp"-->
+            <!--                        android:textStyle="bold"-->
+            <!--                        app:layout_constraintStart_toStartOf="@+id/divider00"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/divider00" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView5"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:lineSpacingExtra="7dp"-->
+            <!--                        android:text="@string/neutering_male_basic_explain00"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="14dp"-->
+            <!--                        app:layout_constraintEnd_toEndOf="@+id/divider00"-->
+            <!--                        app:layout_constraintStart_toEndOf="@+id/txtDot00"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/txtDot00" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/txtDot01"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="8dp"-->
+            <!--                        android:text="·"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="18dp"-->
+            <!--                        android:textStyle="bold"-->
+            <!--                        app:layout_constraintStart_toStartOf="@+id/txtDot00"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView5" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView6"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:lineSpacingExtra="7dp"-->
+            <!--                        android:text="@string/neutering_male_basic_explain01"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="14dp"-->
+            <!--                        app:layout_constraintEnd_toEndOf="@+id/divider00"-->
+            <!--                        app:layout_constraintStart_toEndOf="@+id/txtDot01"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/txtDot01" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/txtDot02"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="8dp"-->
+            <!--                        android:text="·"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="18dp"-->
+            <!--                        android:textStyle="bold"-->
+            <!--                        android:layout_marginBottom="20dp"-->
+            <!--                        app:layout_constraintVertical_bias="0.0"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="@+id/txtDot01"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView6" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView7"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:lineSpacingExtra="7dp"-->
+            <!--                        android:text="@string/neutering_male_basic_explain02"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="14dp"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="@+id/txtDot02"-->
+            <!--                        app:layout_constraintEnd_toEndOf="@+id/divider00"-->
+            <!--                        app:layout_constraintStart_toEndOf="@+id/txtDot02"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/txtDot02" />-->
+
+            <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                    android:id="@+id/constraintLayout4"-->
+            <!--                    android:layout_width="0dp"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginTop="10dp"-->
+            <!--                    android:background="@drawable/bg_20dp_rounding_white"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"-->
+            <!--                    app:layout_constraintWidth_percent="0.88">-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView8"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="20dp"-->
+            <!--                        android:text="@string/neutering_male_premium"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="16dp"-->
+            <!--                        android:layout_marginStart="20dp"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:text="140,000"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="16dp"-->
+            <!--                        android:textStyle="bold"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView8"-->
+            <!--                        app:layout_constraintEnd_toStartOf="@+id/appCompatTextView9"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.96"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/appCompatTextView8" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView9"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:text="@string/health_check_price_unit"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="14dp"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView8"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.96"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/appCompatTextView8" />-->
+
+            <!--                    <View-->
+            <!--                        android:id="@+id/divider01"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="1dp"-->
+            <!--                        android:layout_marginTop="15dp"-->
+            <!--                        android:background="@color/divider_grey"-->
+            <!--                        app:layout_constraintEnd_toEndOf="@+id/appCompatTextView9"-->
+            <!--                        app:layout_constraintStart_toStartOf="@+id/appCompatTextView8"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView8" />-->
+
+            <!--                    <kr.co.alphadopetshop.util.CharacterWrapTextView-->
+            <!--                        android:id="@+id/txtDot03"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="15dp"-->
+            <!--                        android:text="·"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="18dp"-->
+            <!--                        android:textStyle="bold"-->
+            <!--                        app:layout_constraintStart_toStartOf="@+id/divider01"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/divider01" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView10"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:lineSpacingExtra="7dp"-->
+            <!--                        android:text="@string/neutering_male_premium_explain00"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="14dp"-->
+            <!--                        app:layout_constraintEnd_toEndOf="@+id/divider01"-->
+            <!--                        app:layout_constraintStart_toEndOf="@+id/txtDot03"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/txtDot03" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/txtDot04"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="8dp"-->
+            <!--                        android:text="·"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="18dp"-->
+            <!--                        android:textStyle="bold"-->
+            <!--                        app:layout_constraintStart_toStartOf="@+id/txtDot03"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView10" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView11"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:lineSpacingExtra="7dp"-->
+            <!--                        android:text="@string/neutering_male_premium_explain01"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="14dp"-->
+            <!--                        app:layout_constraintEnd_toEndOf="@+id/divider01"-->
+            <!--                        app:layout_constraintStart_toEndOf="@+id/txtDot04"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/txtDot04" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/txtDot05"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="8dp"-->
+            <!--                        android:text="·"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="18dp"-->
+            <!--                        android:textStyle="bold"-->
+            <!--                        app:layout_constraintVertical_bias="0.0"-->
+            <!--                        android:layout_marginBottom="20dp"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="@+id/txtDot04"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView11" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView12"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:lineSpacingExtra="7dp"-->
+            <!--                        android:text="@string/neutering_male_premium_explain02"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="14dp"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="@+id/txtDot05"-->
+            <!--                        app:layout_constraintEnd_toEndOf="@+id/divider01"-->
+            <!--                        app:layout_constraintStart_toEndOf="@+id/txtDot05"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/txtDot05" />-->
+            <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                    android:id="@+id/constraintLayout5"-->
+            <!--                    android:layout_width="0dp"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginTop="10dp"-->
+            <!--                    android:background="@drawable/bg_20dp_rounding_white"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"-->
+            <!--                    app:layout_constraintWidth_percent="0.88">-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView13"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="20dp"-->
+            <!--                        android:layout_marginBottom="20dp"-->
+            <!--                        android:lineSpacingExtra="7dp"-->
+            <!--                        android:text="@string/neutering_male_product02"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="16dp"-->
+            <!--                        android:layout_marginStart="20dp"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:text="100,000"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="16dp"-->
+            <!--                        android:textStyle="bold"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView14"-->
+            <!--                        app:layout_constraintEnd_toStartOf="@+id/appCompatTextView14"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.96"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/appCompatTextView14" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView14"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:text="@string/health_check_price_unit"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="14dp"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView13"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.96"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/appCompatTextView13" />-->
+            <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                    android:id="@+id/layout00"-->
+            <!--                    android:layout_width="0dp"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:background="@drawable/bg_20dp_rounding_white"-->
+            <!--                    android:layout_marginTop="10dp"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout5"-->
+            <!--                    app:layout_constraintWidth_percent="0.88">-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView15"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:lineSpacingExtra="7dp"-->
+            <!--                        android:text="@string/neutering_male_product03"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="16dp"-->
+            <!--                        android:layout_marginTop="20dp"-->
+            <!--                        android:layout_marginBottom="20dp"-->
+            <!--                        android:layout_marginStart="20dp"-->
+            <!--                        app:layout_constraintTop_toTopOf="parent"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"/>-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:text="140,000"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="14dp"-->
+            <!--                        android:textStyle="bold"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView16"-->
+            <!--                        app:layout_constraintEnd_toStartOf="@+id/appCompatTextView16"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.96"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/appCompatTextView16" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView16"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:text="@string/health_check_price_unit"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="16dp"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView15"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.96"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/appCompatTextView15" />-->
+            <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+            <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                    android:id="@+id/constraintLayout17"-->
+            <!--                    android:layout_width="0dp"-->
+            <!--                    android:layout_height="50dp"-->
+            <!--                    android:background="@color/point_color"-->
+            <!--                    android:layout_marginTop="24dp"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintTop_toBottomOf="@+id/layout00">-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView18"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="24dp"-->
+            <!--                        android:text="@string/product01"-->
+            <!--                        android:textColor="@color/white"-->
+            <!--                        android:textSize="17dp"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="10dp"-->
+            <!--                        android:text="@string/neutering_product_title01"-->
+            <!--                        android:textColor="@color/white"-->
+            <!--                        android:textSize="16dp"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                        app:layout_constraintStart_toEndOf="@+id/appCompatTextView18"-->
+            <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+            <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                    android:id="@+id/constraintLayout6"-->
+            <!--                    android:layout_width="0dp"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginTop="20dp"-->
+            <!--                    android:background="@drawable/bg_20dp_rounding_white"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout17"-->
+            <!--                    app:layout_constraintWidth_percent="0.88">-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView19"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="20dp"-->
+            <!--                        android:text="@string/neutering_female_basic"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="16dp"-->
+            <!--                        android:layout_marginStart="20dp"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:text="190,000"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="16dp"-->
+            <!--                        android:textStyle="bold"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView19"-->
+            <!--                        app:layout_constraintEnd_toStartOf="@+id/appCompatTextView20"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.96"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/appCompatTextView19" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView20"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:text="@string/health_check_price_unit"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="14dp"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView19"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.96"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/appCompatTextView19" />-->
+
+            <!--                    <View-->
+            <!--                        android:id="@+id/divider05"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="1dp"-->
+            <!--                        android:layout_marginTop="15dp"-->
+            <!--                        android:background="@color/divider_grey"-->
+            <!--                        app:layout_constraintEnd_toEndOf="@+id/appCompatTextView20"-->
+            <!--                        app:layout_constraintStart_toStartOf="@+id/appCompatTextView19"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView19" />-->
+
+            <!--                    <kr.co.alphadopetshop.util.CharacterWrapTextView-->
+            <!--                        android:id="@+id/txtDot07"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="15dp"-->
+            <!--                        android:text="·"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="18dp"-->
+            <!--                        android:textStyle="bold"-->
+            <!--                        app:layout_constraintStart_toStartOf="@+id/divider05"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/divider05" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView21"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:lineSpacingExtra="7dp"-->
+            <!--                        android:text="@string/neutering_female_basic_explain00"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="14dp"-->
+            <!--                        app:layout_constraintEnd_toEndOf="@+id/divider05"-->
+            <!--                        app:layout_constraintStart_toEndOf="@+id/txtDot07"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/txtDot07" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/txtDot08"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="8dp"-->
+            <!--                        android:layout_marginBottom="20dp"-->
+            <!--                        android:text="·"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="18dp"-->
+            <!--                        android:textStyle="bold"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="@+id/txtDot07"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView21" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView22"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:lineSpacingExtra="7dp"-->
+            <!--                        android:text="@string/neutering_female_basic_explain01"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="14dp"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="@+id/txtDot08"-->
+            <!--                        app:layout_constraintEnd_toEndOf="@+id/divider05"-->
+            <!--                        app:layout_constraintStart_toEndOf="@+id/txtDot08"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/txtDot08" />-->
+            <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                    android:id="@+id/constraintLayout7"-->
+            <!--                    android:layout_width="0dp"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginTop="10dp"-->
+            <!--                    android:background="@drawable/bg_20dp_rounding_white"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout6"-->
+            <!--                    app:layout_constraintWidth_percent="0.88">-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView23"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="20dp"-->
+            <!--                        android:text="@string/neutering_female_premium"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="16dp"-->
+            <!--                        android:layout_marginStart="20dp"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:text="240,000"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="16dp"-->
+            <!--                        android:textStyle="bold"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView23"-->
+            <!--                        app:layout_constraintEnd_toStartOf="@+id/appCompatTextView24"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.96"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/appCompatTextView23" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView24"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:text="@string/health_check_price_unit"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="14dp"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView23"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.96"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/appCompatTextView23" />-->
+
+            <!--                    <View-->
+            <!--                        android:id="@+id/divider06"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="1dp"-->
+            <!--                        android:layout_marginTop="15dp"-->
+            <!--                        android:background="@color/divider_grey"-->
+            <!--                        app:layout_constraintEnd_toEndOf="@+id/appCompatTextView24"-->
+            <!--                        app:layout_constraintStart_toStartOf="@+id/appCompatTextView23"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView23" />-->
+
+            <!--                    <kr.co.alphadopetshop.util.CharacterWrapTextView-->
+            <!--                        android:id="@+id/txtDot09"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="15dp"-->
+            <!--                        android:text="·"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="18dp"-->
+            <!--                        android:textStyle="bold"-->
+            <!--                        app:layout_constraintStart_toStartOf="@+id/divider06"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/divider06" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView25"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:lineSpacingExtra="7dp"-->
+            <!--                        android:text="@string/neutering_female_premium_explain00"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="14dp"-->
+            <!--                        app:layout_constraintEnd_toEndOf="@+id/divider06"-->
+            <!--                        app:layout_constraintStart_toEndOf="@+id/txtDot09"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/txtDot09" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/txtDot10"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="8dp"-->
+            <!--                        android:layout_marginBottom="20dp"-->
+            <!--                        android:text="·"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="18dp"-->
+            <!--                        android:textStyle="bold"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="@+id/txtDot09"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView25" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView26"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:lineSpacingExtra="7dp"-->
+            <!--                        android:text="@string/neutering_female_premium_explain01"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="14dp"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="@+id/txtDot10"-->
+            <!--                        app:layout_constraintEnd_toEndOf="@+id/divider06"-->
+            <!--                        app:layout_constraintStart_toEndOf="@+id/txtDot10"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/txtDot10" />-->
+            <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                    android:id="@+id/constraintLayout18"-->
+            <!--                    android:layout_width="0dp"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:background="@drawable/bg_20dp_rounding_white"-->
+            <!--                    android:layout_marginTop="10dp"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout7"-->
+            <!--                    app:layout_constraintWidth_percent="0.88">-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView27"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="20dp"-->
+            <!--                        android:layout_marginBottom="20dp"-->
+            <!--                        android:lineSpacingExtra="7dp"-->
+            <!--                        android:text="@string/neutering_female_product02"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="16dp"-->
+            <!--                        android:layout_marginStart="20dp"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:text="50,000"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="16dp"-->
+            <!--                        android:textStyle="bold"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView128"-->
+            <!--                        app:layout_constraintEnd_toStartOf="@+id/appCompatTextView128"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.96"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/appCompatTextView128" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView128"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:text="@string/health_check_price_unit"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="14dp"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView27"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.96"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/appCompatTextView27" />-->
+            <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                    android:id="@+id/constraintLayout19"-->
+            <!--                    android:layout_width="0dp"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:background="@drawable/bg_20dp_rounding_white"-->
+            <!--                    android:layout_marginTop="10dp"-->
+            <!--                    android:layout_marginBottom="40dp"-->
+            <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout18"-->
+            <!--                    app:layout_constraintWidth_percent="0.88">-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView29"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="20dp"-->
+            <!--                        android:layout_marginBottom="20dp"-->
+            <!--                        android:lineSpacingExtra="7dp"-->
+            <!--                        android:text="@string/neutering_female_product03"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="16dp"-->
+            <!--                        android:layout_marginStart="20dp"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:text="140,000"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="16dp"-->
+            <!--                        android:textStyle="bold"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView130"-->
+            <!--                        app:layout_constraintEnd_toStartOf="@+id/appCompatTextView130"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.96"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/appCompatTextView130" />-->
+
+            <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                        android:id="@+id/appCompatTextView130"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:text="@string/health_check_price_unit"-->
+            <!--                        android:textColor="@color/font_title"-->
+            <!--                        android:textSize="14dp"-->
+            <!--                        app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView29"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.96"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="@+id/appCompatTextView29" />-->
+            <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+            <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            <kr.co.alphadopetshop.util.FitXyImageView
+                android:id="@+id/imgMedicalSubject"
+                android:layout_width="match_parent"
+                android:layout_height="810dp"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/topView"
+                app:layout_constraintWidth_percent="1" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </me.didik.component.StickyNestedScrollView>
+</layout>

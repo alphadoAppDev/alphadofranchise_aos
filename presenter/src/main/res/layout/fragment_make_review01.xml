@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        tools:context=".ui.health_check.review.MakeReviewFragment01">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView35"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/review"
+            android:textColor="@color/font_title"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="@+id/editContent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0387" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:textColor="@color/font_sub"
+            android:text="0 / 1000"
+            app:layout_constraintEnd_toEndOf="@+id/editContent"
+            app:layout_constraintTop_toTopOf="@+id/appCompatTextView35"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView35"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editContent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:padding="20dp"
+            android:background="@drawable/bg_reck_stroke_grey"
+            android:inputType="textMultiLine"
+            android:textSize="14dp"
+            android:lineSpacingExtra="6dp"
+            android:gravity="top"
+            android:maxLength="1000"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView35"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.88"
+            app:layout_constraintDimensionRatio="1:0.605"/>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutGuide"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/editContent"
+            app:layout_constraintEnd_toEndOf="@+id/editContent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/editContent"
+            app:layout_constraintTop_toTopOf="@+id/editContent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtGuide00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/review_guide00"
+                android:textColor="@color/font_title"
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <kr.co.alphadopetshop.util.CharacterWrapTextView
+                android:id="@+id/txtGuide01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="7dp"
+                android:text="@string/review_guide01"
+                android:textColor="@color/font_sub"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtGuide00" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView36"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/review_insert_picture"
+            android:textColor="@color/font_title"
+            android:textSize="16dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="@+id/editContent"
+            app:layout_constraintTop_toBottomOf="@+id/editContent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerImg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView36"
+            app:layout_constraintWidth_percent="0.88"
+            app:spanCount="4" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

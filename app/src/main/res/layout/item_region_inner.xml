@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/viewGuide"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.88"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtCell00"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:textColor="@color/main_black"
+            android:autoSizeMaxTextSize="12dp"
+            android:autoSizeMinTextSize="8dp"
+            android:autoSizeStepGranularity="1dp"
+            android:autoSizeTextType="uniform"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/viewGuide"
+            app:layout_constraintWidth_percent="0.21"
+            app:layout_constraintDimensionRatio="1:0.333"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtCell01"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:textColor="@color/main_black"
+            android:autoSizeMaxTextSize="12dp"
+            android:autoSizeMinTextSize="8dp"
+            android:autoSizeStepGranularity="1dp"
+            android:autoSizeTextType="uniform"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            app:layout_constraintTop_toTopOf="@+id/txtCell00"
+            app:layout_constraintBottom_toBottomOf="@+id/txtCell00"
+            app:layout_constraintEnd_toStartOf="@+id/txtCell02"
+            app:layout_constraintWidth_percent="0.11"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtCell02"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:textColor="@color/main_black"
+            android:autoSizeMaxTextSize="12dp"
+            android:autoSizeMinTextSize="8dp"
+            android:autoSizeStepGranularity="1dp"
+            android:autoSizeTextType="uniform"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            app:layout_constraintTop_toTopOf="@+id/txtCell00"
+            app:layout_constraintBottom_toBottomOf="@+id/txtCell00"
+            app:layout_constraintEnd_toStartOf="@+id/txtCell03"
+            app:layout_constraintWidth_percent="0.11"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtCell03"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:textColor="@color/main_black"
+            android:autoSizeMaxTextSize="12dp"
+            android:autoSizeMinTextSize="8dp"
+            android:autoSizeStepGranularity="1dp"
+            android:autoSizeTextType="uniform"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            app:layout_constraintTop_toTopOf="@+id/txtCell00"
+            app:layout_constraintBottom_toBottomOf="@+id/txtCell00"
+            app:layout_constraintEnd_toStartOf="@+id/txtCell04"
+            app:layout_constraintWidth_percent="0.11"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtCell04"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:textColor="@color/main_black"
+            android:autoSizeMaxTextSize="12dp"
+            android:autoSizeMinTextSize="8dp"
+            android:autoSizeStepGranularity="1dp"
+            android:autoSizeTextType="uniform"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            app:layout_constraintTop_toTopOf="@+id/txtCell00"
+            app:layout_constraintBottom_toBottomOf="@+id/txtCell00"
+            app:layout_constraintEnd_toStartOf="@+id/txtCell05"
+            app:layout_constraintWidth_percent="0.11"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtCell05"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:textColor="@color/main_black"
+            android:autoSizeMaxTextSize="12dp"
+            android:autoSizeMinTextSize="8dp"
+            android:autoSizeStepGranularity="1dp"
+            android:autoSizeTextType="uniform"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            app:layout_constraintTop_toTopOf="@+id/txtCell00"
+            app:layout_constraintBottom_toBottomOf="@+id/txtCell00"
+            app:layout_constraintEnd_toStartOf="@+id/txtCell06"
+            app:layout_constraintWidth_percent="0.11"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtCell06"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:textColor="@color/main_black"
+            android:autoSizeMaxTextSize="12dp"
+            android:autoSizeMinTextSize="8dp"
+            android:autoSizeStepGranularity="1dp"
+            android:autoSizeTextType="uniform"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            app:layout_constraintTop_toTopOf="@+id/txtCell00"
+            app:layout_constraintBottom_toBottomOf="@+id/txtCell00"
+            app:layout_constraintEnd_toEndOf="@+id/viewGuide"
+            app:layout_constraintWidth_percent="0.11"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/stroke_grey"
+            app:layout_constraintTop_toBottomOf="@+id/txtCell00"
+            app:layout_constraintStart_toStartOf="@+id/txtCell00"
+            app:layout_constraintEnd_toEndOf="@+id/txtCell06"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

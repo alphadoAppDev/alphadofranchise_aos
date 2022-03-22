@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.ShopMainFragment">
+
+        <kr.co.alphadopetshop.util.StickyScrollView
+            android:id="@+id/stickyScrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutLogo"
+                    android:layout_width="0dp"
+                    android:layout_height="68dp"
+                    android:background="@color/white"
+                    android:visibility="visible"
+                    android:paddingBottom="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgMainLogo"
+                        android:layout_width="0dp"
+                        android:layout_height="34dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/icon_home_logo_purple"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="2.35:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.07"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/layoutTabSameRect"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutLogo"/>
+
+<!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                    android:id="@+id/layoutTab"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@color/white"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/layoutLogo">-->
+
+<!--                    <com.google.android.material.tabs.TabLayout-->
+<!--                        android:id="@+id/tabLayout"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="40dp"-->
+<!--                        android:layout_marginStart="20dp"-->
+<!--                        android:background="@android:color/transparent"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintHorizontal_bias="0.07"-->
+<!--                        app:layout_constraintStart_toStartOf="parent"-->
+<!--                        app:layout_constraintTop_toTopOf="parent"-->
+<!--                        app:tabIndicator="@drawable/tab_indicator"-->
+<!--                        app:tabMinWidth="80dp"-->
+<!--                        app:tabMode="scrollable"-->
+<!--                        app:tabIndicatorColor="@color/point_color"-->
+<!--                        app:tabRippleColor="@null"-->
+<!--                        app:tabSelectedTextColor="@color/black"-->
+<!--                        app:tabTextAppearance="@style/TabLayoutTextStyle"-->
+<!--                        app:tabTextColor="@color/font_sub">-->
+
+<!--                        <com.google.android.material.tabs.TabItem-->
+<!--                            android:id="@+id/tabItem00"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/main_tab00" />-->
+
+<!--                        <com.google.android.material.tabs.TabItem-->
+<!--                            android:id="@+id/tabItem01"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/main_tab01" />-->
+
+<!--                        <com.google.android.material.tabs.TabItem-->
+<!--                            android:id="@+id/tabItem02"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/main_tab02" />-->
+
+<!--                    </com.google.android.material.tabs.TabLayout>-->
+<!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutMenu"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/layoutTabSameRect">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtItemCount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:textColor="@color/font_sub"
+                        android:textSize="16dp"
+                        android:textStyle="normal"
+                        android:layout_marginBottom="14dp"
+                        app:layout_constraintBottom_toTopOf="@+id/view"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_percent="0.88" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/btnFilter"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/effect_ripple_oval"
+                        android:clickable="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/icon_home_filter_gray"
+                        app:layout_constraintBottom_toBottomOf="@+id/txtItemCount"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/btnMap"
+                        app:layout_constraintTop_toTopOf="@+id/txtItemCount" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/btnMap"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:background="@drawable/effect_ripple_oval"
+                        android:clickable="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/icon_home_map_gray"
+                        app:layout_constraintBottom_toBottomOf="@+id/txtItemCount"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toEndOf="@+id/txtItemCount"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:background="#f6f6f6"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/underLine"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/divider_grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutMenu" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerHealthCheck"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:overScrollMode="never"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutMenu" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </kr.co.alphadopetshop.util.StickyScrollView>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutLogoInvisible"
+            android:layout_width="0dp"
+            android:layout_height="68dp"
+            android:background="@color/white"
+            android:visibility="invisible"
+            android:paddingBottom="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgMainLogoInvisible"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_home_logo_purple"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="2.35:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.07"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutTabInvisible"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:tag="sticky"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutLogoInvisible">
+
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayoutInvisible"
+                android:layout_width="395dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:background="@color/white"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.07"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tabIndicator="@drawable/tab_indicator"
+                app:tabIndicatorColor="@color/point_color"
+                app:tabMinWidth="80dp"
+                app:tabMode="scrollable"
+                app:tabRippleColor="@null"
+                app:tabSelectedTextColor="@color/black"
+                app:tabTextAppearance="@style/TabLayoutTextStyle"
+                app:tabTextColor="@color/font_sub">
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tabItem00Invisible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_tab00" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tabItem01Invisible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_tab01" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tabItem02Invisible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_tab02" />
+
+            </com.google.android.material.tabs.TabLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutMenuInvisible"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:paddingBottom="14dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/layoutTabInvisible">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtItemCountInvisible"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:textColor="@color/font_sub"
+                android:textSize="16dp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.88" />
+
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btnFilterInvisible"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/effect_ripple_oval"
+                android:clickable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_home_filter_gray"
+                app:layout_constraintBottom_toBottomOf="@+id/txtItemCountInvisible"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/btnMapInvisible"
+                app:layout_constraintTop_toTopOf="@+id/txtItemCountInvisible" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btnMapInvisible"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/effect_ripple_oval"
+                android:clickable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_home_map_gray"
+                app:layout_constraintBottom_toBottomOf="@+id/txtItemCountInvisible"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="@+id/txtItemCountInvisible"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/underLineINVISIBLE"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/divider_grey"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutMenuInvisible" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutMap"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/underLineINVISIBLE">
+
+            <FrameLayout
+                android:id="@+id/containerMap"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <FrameLayout
+                    android:id="@+id/mapView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </FrameLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bottomView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="22dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/imgHospital"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="27dp"
+                    android:scaleType="fitXY"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.07"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.88"
+                    app:riv_corner_radius="10dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtRank"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:background="@color/point_color"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    app:layout_constraintEnd_toEndOf="@+id/imgHospital"
+                    app:layout_constraintStart_toStartOf="@+id/imgHospital"
+                    app:layout_constraintTop_toBottomOf="@+id/imgHospital" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgReview"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/icon_home_star_yellow"
+                    android:layout_marginStart="15dp"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintWidth_percent="0.046"
+                    app:layout_constraintStart_toEndOf="@+id/imgHospital"
+                    app:layout_constraintTop_toTopOf="@+id/imgHospital"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtReviewScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:autoSizeMaxTextSize="14dp"
+                    android:autoSizeMinTextSize="10dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeStepGranularity="1dp"
+                    android:textColor="@color/font_title"
+                    android:layout_marginStart="2dp"
+                    android:gravity="center"
+                    app:layout_constraintTop_toTopOf="@+id/imgReview"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgReview"
+                    app:layout_constraintStart_toEndOf="@+id/imgReview"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtReviewCnt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:autoSizeMaxTextSize="14dp"
+                    android:autoSizeMinTextSize="10dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeStepGranularity="1dp"
+                    android:textColor="@color/font_sub"
+                    android:layout_marginStart="2dp"
+                    android:gravity="center"
+                    app:layout_constraintTop_toTopOf="@+id/txtReviewScore"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtReviewScore"
+                    app:layout_constraintStart_toEndOf="@+id/txtReviewScore"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtHospitalName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/font_title"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/imgReview"
+                    app:layout_constraintTop_toBottomOf="@+id/imgReview" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtHospitalInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/font_sub"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toStartOf="@+id/txtPriceUnit"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/txtHospitalName"
+                    app:layout_constraintTop_toBottomOf="@+id/txtHospitalName" />
+
+                <kr.co.alphadopetshop.util.FlowLayout
+                    android:id="@+id/layoutFlow"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginEnd="45dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/txtHospitalInfo"
+                    app:layout_constraintTop_toBottomOf="@+id/txtHospitalInfo" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtPriceRank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="@color/font_sub"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtPrice"
+                    app:layout_constraintEnd_toStartOf="@+id/txtPrice"
+                    app:layout_constraintTop_toTopOf="@+id/txtPrice" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/font_title"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtPriceUnit"
+                    app:layout_constraintEnd_toStartOf="@+id/txtPriceUnit"
+                    app:layout_constraintTop_toTopOf="@+id/txtPriceUnit" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtPriceUnit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/health_check_price_unit"
+                    android:textColor="@color/font_sub"
+                    android:textSize="12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.95"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutFlow" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:visibility="gone"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutIntro"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="0.177"
+                app:layout_constraintDimensionRatio="1:1.54"
+                android:src="@drawable/icon_home_logo_center_purple"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

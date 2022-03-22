@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="kr.co.alphadopetshop">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true">
+
+        <activity
+            android:name="kr.co.alphadopetshop.ui.health_check.detail.DetailMapActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:launchMode="singleTask"
+            android:minAspectRatio="1.67"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Common"
+            android:exported="false"/>
+
+        <activity
+            android:name="kr.co.alphadopetshop.ui.health_check.detail.HospitalImageActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:launchMode="singleTask"
+            android:minAspectRatio="1.67"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Common"
+            android:exported="false"/>
+
+        <activity
+            android:name="kr.co.alphadopetshop.ui.health_check.review.MakeReviewActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:launchMode="singleTask"
+            android:minAspectRatio="1.67"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing"
+            android:theme="@style/Theme.Common"
+            android:exported="false"/>
+
+        <activity
+            android:name="kr.co.alphadopetshop.ui.health_check.detail.BloodInspectionActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:launchMode="singleTask"
+            android:minAspectRatio="1.67"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Common"
+            android:exported="false"/>
+
+        <activity
+            android:name="kr.co.alphadopetshop.ui.health_check.detail.RadiationInspectionActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:launchMode="singleTask"
+            android:minAspectRatio="1.67"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Common"
+            android:exported="false"/>
+
+        <activity
+            android:name="kr.co.alphadopetshop.ui.health_check.detail.UltrasonicWaveInspectionActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:launchMode="singleTask"
+            android:minAspectRatio="1.67"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Common"
+            android:exported="false"/>
+
+        <activity
+            android:name="kr.co.alphadopetshop.ui.health_check.detail.HealthCheckActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:launchMode="singleTask"
+            android:minAspectRatio="1.67"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Common"
+            android:exported="false"/>
+
+        <activity
+            android:name="kr.co.alphadopetshop.ui.health_check.detail.MedicalSubjectActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:launchMode="singleTask"
+            android:minAspectRatio="1.67"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Common"
+            android:exported="false"/>
+
+        <activity
+            android:name="kr.co.alphadopetshop.ui.health_check.HospitalDetailActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:launchMode="singleTask"
+            android:minAspectRatio="1.67"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Common"
+            android:exported="false"/>
+        <activity
+            android:name="kr.co.alphadopetshop.ui.main.HealthCheckFilterActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout"
+            android:launchMode="singleTask"
+            android:minAspectRatio="1.67"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Common"
+            android:exported="false"/>
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="fd432f15a7aa63dcfefa79bed32c0650" />
+    </application>
+
+</manifest>

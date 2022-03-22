@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="fragment"
+            type="kr.co.alphadopetshop.ui.health_check.review.MakeReviewFragment00" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.health_check.review.MakeReviewFragment00">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/review_examination_satisfaction"
+            android:textColor="@color/font_title"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.038" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/review_examination_satisfaction_question"
+            android:textColor="@color/font_sub"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView28" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView30">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/examinationSatisfaction00"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_review_very_bad_gray"
+                android:onClick="@{() -> fragment.selectSatisfaction(0, 1)}"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/view00"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/satisfaction00"
+                android:textColor="@color/font_title"
+                android:textSize="14dp"
+                android:onClick="@{() -> fragment.selectSatisfaction(0, 1)}"
+                app:layout_constraintEnd_toEndOf="@+id/examinationSatisfaction00"
+                app:layout_constraintStart_toStartOf="@+id/examinationSatisfaction00"
+                app:layout_constraintTop_toBottomOf="@+id/examinationSatisfaction00" />
+
+            <View
+                android:id="@+id/view00"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/examinationSatisfaction01"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.0467" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/examinationSatisfaction01"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_review_bad_gray"
+                android:onClick="@{() -> fragment.selectSatisfaction(0, 2)}"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/view01"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/satisfaction01"
+                android:textColor="@color/font_title"
+                android:textSize="14dp"
+                android:onClick="@{() -> fragment.selectSatisfaction(0, 2)}"
+                app:layout_constraintEnd_toEndOf="@+id/examinationSatisfaction01"
+                app:layout_constraintStart_toStartOf="@+id/examinationSatisfaction01"
+                app:layout_constraintTop_toBottomOf="@+id/examinationSatisfaction01" />
+
+            <View
+                android:id="@+id/view01"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/examinationSatisfaction02"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.0467" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/examinationSatisfaction02"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_review_soso_gray"
+                android:onClick="@{() -> fragment.selectSatisfaction(0, 3)}"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/satisfaction02"
+                android:textColor="@color/font_title"
+                android:textSize="14dp"
+                android:onClick="@{() -> fragment.selectSatisfaction(0, 4)}"
+                app:layout_constraintEnd_toEndOf="@+id/examinationSatisfaction02"
+                app:layout_constraintStart_toStartOf="@+id/examinationSatisfaction02"
+                app:layout_constraintTop_toBottomOf="@+id/examinationSatisfaction02" />
+
+            <View
+                android:id="@+id/view02"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/examinationSatisfaction02"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.0467" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/examinationSatisfaction03"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_review_good_gray"
+                android:onClick="@{() -> fragment.selectSatisfaction(0, 4)}"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toEndOf="@+id/view02"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/satisfaction03"
+                android:textColor="@color/font_title"
+                android:textSize="14dp"
+                android:onClick="@{() -> fragment.selectSatisfaction(0, 4)}"
+                app:layout_constraintEnd_toEndOf="@+id/examinationSatisfaction03"
+                app:layout_constraintStart_toStartOf="@+id/examinationSatisfaction03"
+                app:layout_constraintTop_toBottomOf="@+id/examinationSatisfaction03" />
+
+            <View
+                android:id="@+id/view03"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/examinationSatisfaction03"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.0467" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/examinationSatisfaction04"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_review_very_good_gray"
+                android:onClick="@{() -> fragment.selectSatisfaction(0, 5)}"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toEndOf="@+id/view03"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/satisfaction04"
+                android:textColor="@color/font_title"
+                android:textSize="14dp"
+                android:onClick="@{() -> fragment.selectSatisfaction(0, 5)}"
+                app:layout_constraintEnd_toEndOf="@+id/examinationSatisfaction04"
+                app:layout_constraintStart_toStartOf="@+id/examinationSatisfaction04"
+                app:layout_constraintTop_toBottomOf="@+id/examinationSatisfaction04" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/divider00"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            app:layout_constraintVertical_bias="0.038"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout8"
+            app:layout_constraintWidth_percent="0.822" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/review_facility_satisfaction"
+            android:textColor="@color/font_title"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider00"
+            app:layout_constraintVertical_bias="0.0413" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/review_facility_satisfaction_question"
+            android:textColor="@color/font_sub"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView31" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView32">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/facilitySatisfaction00"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_review_very_bad_gray"
+                android:onClick="@{() -> fragment.selectSatisfaction(1, 1)}"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/view10"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/satisfaction00"
+                android:textColor="@color/font_title"
+                android:textSize="14dp"
+                android:onClick="@{() -> fragment.selectSatisfaction(1, 1)}"
+                app:layout_constraintEnd_toEndOf="@+id/facilitySatisfaction00"
+                app:layout_constraintStart_toStartOf="@+id/facilitySatisfaction00"
+                app:layout_constraintTop_toBottomOf="@+id/facilitySatisfaction00" />
+
+            <View
+                android:id="@+id/view10"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/facilitySatisfaction01"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.0467" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/facilitySatisfaction01"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_review_bad_gray"
+                android:onClick="@{() -> fragment.selectSatisfaction(1, 2)}"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/view11"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/satisfaction01"
+                android:textColor="@color/font_title"
+                android:textSize="14dp"
+                android:onClick="@{() -> fragment.selectSatisfaction(1, 2)}"
+                app:layout_constraintEnd_toEndOf="@+id/facilitySatisfaction01"
+                app:layout_constraintStart_toStartOf="@+id/facilitySatisfaction01"
+                app:layout_constraintTop_toBottomOf="@+id/facilitySatisfaction01" />
+
+            <View
+                android:id="@+id/view11"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/facilitySatisfaction02"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.0467" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/facilitySatisfaction02"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_review_soso_gray"
+                android:onClick="@{() -> fragment.selectSatisfaction(1, 3)}"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/satisfaction02"
+                android:textColor="@color/font_title"
+                android:textSize="14dp"
+                android:onClick="@{() -> fragment.selectSatisfaction(1, 3)}"
+                app:layout_constraintEnd_toEndOf="@+id/facilitySatisfaction02"
+                app:layout_constraintStart_toStartOf="@+id/facilitySatisfaction02"
+                app:layout_constraintTop_toBottomOf="@+id/facilitySatisfaction02" />
+
+            <View
+                android:id="@+id/view12"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/facilitySatisfaction02"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.0467" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/facilitySatisfaction03"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_review_good_gray"
+                android:onClick="@{() -> fragment.selectSatisfaction(1, 4)}"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toEndOf="@+id/view12"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/satisfaction03"
+                android:textColor="@color/font_title"
+                android:textSize="14dp"
+                android:onClick="@{() -> fragment.selectSatisfaction(1, 4)}"
+                app:layout_constraintEnd_toEndOf="@+id/facilitySatisfaction03"
+                app:layout_constraintStart_toStartOf="@+id/facilitySatisfaction03"
+                app:layout_constraintTop_toBottomOf="@+id/facilitySatisfaction03" />
+
+            <View
+                android:id="@+id/view13"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/facilitySatisfaction03"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.0467" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/facilitySatisfaction04"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_review_very_good_gray"
+                android:onClick="@{() -> fragment.selectSatisfaction(1, 5)}"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toEndOf="@+id/view13"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/satisfaction04"
+                android:textColor="@color/font_title"
+                android:textSize="14dp"
+                android:onClick="@{() -> fragment.selectSatisfaction(1, 5)}"
+                app:layout_constraintEnd_toEndOf="@+id/facilitySatisfaction04"
+                app:layout_constraintStart_toStartOf="@+id/facilitySatisfaction04"
+                app:layout_constraintTop_toBottomOf="@+id/facilitySatisfaction04" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/divider01"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            app:layout_constraintVertical_bias="0.0545"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.822" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/review_kindness_satisfaction"
+            android:textColor="@color/font_title"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider01"
+            app:layout_constraintVertical_bias="0.0615" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/review_kindness_satisfaction_question"
+            android:textColor="@color/font_sub"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView33" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView34">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/kindnessSatisfaction00"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_review_very_bad_gray"
+                android:onClick="@{() -> fragment.selectSatisfaction(2, 1)}"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/view20"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/satisfaction00"
+                android:textColor="@color/font_title"
+                android:textSize="14dp"
+                android:onClick="@{() -> fragment.selectSatisfaction(2, 1)}"
+                app:layout_constraintEnd_toEndOf="@+id/kindnessSatisfaction00"
+                app:layout_constraintStart_toStartOf="@+id/kindnessSatisfaction00"
+                app:layout_constraintTop_toBottomOf="@+id/kindnessSatisfaction00" />
+
+            <View
+                android:id="@+id/view20"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/kindnessSatisfaction01"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.0467" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/kindnessSatisfaction01"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_review_bad_gray"
+                android:onClick="@{() -> fragment.selectSatisfaction(2, 2)}"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/view21"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/satisfaction01"
+                android:textColor="@color/font_title"
+                android:textSize="14dp"
+                android:onClick="@{() -> fragment.selectSatisfaction(2, 2)}"
+                app:layout_constraintEnd_toEndOf="@+id/kindnessSatisfaction01"
+                app:layout_constraintStart_toStartOf="@+id/kindnessSatisfaction01"
+                app:layout_constraintTop_toBottomOf="@+id/kindnessSatisfaction01" />
+
+            <View
+                android:id="@+id/view21"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/kindnessSatisfaction02"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.0467" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/kindnessSatisfaction02"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_review_soso_gray"
+                android:onClick="@{() -> fragment.selectSatisfaction(2, 3)}"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/satisfaction02"
+                android:textColor="@color/font_title"
+                android:textSize="14dp"
+                android:onClick="@{() -> fragment.selectSatisfaction(2, 3)}"
+                app:layout_constraintEnd_toEndOf="@+id/kindnessSatisfaction02"
+                app:layout_constraintStart_toStartOf="@+id/kindnessSatisfaction02"
+                app:layout_constraintTop_toBottomOf="@+id/kindnessSatisfaction02" />
+
+            <View
+                android:id="@+id/view22"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/kindnessSatisfaction02"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.0467" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/kindnessSatisfaction03"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_review_good_gray"
+                android:onClick="@{() -> fragment.selectSatisfaction(2, 4)}"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toEndOf="@+id/view22"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/satisfaction03"
+                android:textColor="@color/font_title"
+                android:textSize="14dp"
+                android:onClick="@{() -> fragment.selectSatisfaction(2, 4)}"
+                app:layout_constraintEnd_toEndOf="@+id/kindnessSatisfaction03"
+                app:layout_constraintStart_toStartOf="@+id/kindnessSatisfaction03"
+                app:layout_constraintTop_toBottomOf="@+id/kindnessSatisfaction03" />
+
+            <View
+                android:id="@+id/view23"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/kindnessSatisfaction03"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.0467" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/kindnessSatisfaction04"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_review_very_good_gray"
+                android:onClick="@{() -> fragment.selectSatisfaction(2, 5)}"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toEndOf="@+id/view23"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/satisfaction04"
+                android:textColor="@color/font_title"
+                android:textSize="14dp"
+                android:onClick="@{() -> fragment.selectSatisfaction(2, 5)}"
+                app:layout_constraintEnd_toEndOf="@+id/kindnessSatisfaction04"
+                app:layout_constraintStart_toStartOf="@+id/kindnessSatisfaction04"
+                app:layout_constraintTop_toBottomOf="@+id/kindnessSatisfaction04" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
